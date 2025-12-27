@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: demo-app
+  name: gitops-demo-app
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/<GMCHETHANA>/gitops-demo.git' 
+    repoURL: 'git@github.com:GMCHETHANA/gitops-demo.git'
     targetRevision: main
     path: k8s
   destination:
@@ -16,3 +16,4 @@ spec:
     automated:
       prune: true
       selfHeal: true
+
